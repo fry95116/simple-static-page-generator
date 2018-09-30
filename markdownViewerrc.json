@@ -1,0 +1,5 @@
+{
+    "contentPath":"./content",
+    "outputPath":"./output",
+    "templatePath": "./template"
+}

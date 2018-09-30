@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+html
+  head
+    meta(charset="utf-8")
+    meta(
+      name="viewport"
+      content="width=device-width,initial-scale=1.0"
+    )
+    title index
+    link(
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    )
+    link(
+      rel="stylesheet" 
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    )
+    link(
+      rel="stylesheet"
+      href="./static/css/index.css"
+    )
+    script(
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    )
+    script(
+      src="./static/js/index.js"
+    )
+  body
+    #the-index
+      nav.my-navbar.bg-dark.sticky-top
+        .side-bar-toggler.button-nav.d-flex.d-sm-none.p-3
+          i.fas.fa-bars
+        h4.title.ml-sm-3 Markdown Viewer
+        .button-nav.d-flex.p-3
+          i.fas.fa-search
+      
+      .content.container
+        .row.position-relative
+          //- toggle by display: block in style
+          .side-bar.col-lg-3.col-sm-4.d-sm-block 
+            ul.list-group.mt-sm-2
+              //- active
+              each count, className in classes
+                li.classItem.list-group-item.d-flex.justify-content-between.align-items-center(data-class-name=className)
+                  =className
+                  span.badge.badge-primary.badge-pill=count
+          //- @click=hide sidebar
+          .col-lg-9.col-sm-8.pt-2
+            each essay in essayDescriptions
+              .row
+                .col
+                  //- click=jump to essay
+                  a.essay.unset(
+                    href=essay.href
+                    data-class-name=essay.className
+                  )
+                    .card.mb-2
+                      .card-body
+                        h5.card-title=essay.title
+                        h6.card-subtitle.mb-2.text-muted=essay.createDate
+                        p.card-text=essay.summary

@@ -1,0 +1,28 @@
+{
+  "name": "simple-static-page-generator",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "sspg": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "commander": "^2.18.0",
+    "lodash.isnil": "^4.0.0",
+    "markdown-it": "^8.4.2",
+    "markdown-it-anchor": "^5.0.2",
+    "markdown-it-front-matter": "^0.1.2",
+    "moment": "^2.22.2",
+    "pug": "^2.0.3",
+    "uslug": "^1.0.4",
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1",
+    "yaml": "^1.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}
