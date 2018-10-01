@@ -4,7 +4,7 @@ const {copyAsync, writeAsync, readAsync, existsAsync} = require('fs-jetpack')
 const path = require('path')
 const moment = require('moment')
 const isNil = require('lodash.isnil')
-
+const uslug = require('uslug')
 const {mkdirAsync} = require('../src/utils')
 const {generate} = require('../src/generator')
 let env = {
@@ -124,7 +124,7 @@ async function initializeFolder(rootPath){
  * @param {boolean} overwrite 如果文件存在，是否覆盖原文件
  */
 async function createEssay(rootPath, title, className, overwrite){
-    
+    if(className === 'static') throw new Error('class name "static" is reserved')
     let rcPath = path.join(rootPath, './sspgrc.json')
     let config = await readAsync(rcPath,)
     if(isNil(config)) throw new Error(`missing file ${rcPath}`)
@@ -139,10 +139,7 @@ async function createEssay(rootPath, title, className, overwrite){
         throw new Error(`"contentPath" required in "${rcPath}"`)
     }
 
-    // console.log(overwrite)
-    // TODO:validate contentPath, title and className
-    // TODO: tilte = uslug(title)
-    let filePath = path.join(config.contentPath, className, title + '.md')
+    let filePath = path.join(config.contentPath, className, uslug(title) + '.md')
     
     if(!overwrite && await existsAsync(filePath)){
         throw new Error(`${filePath} already exist`)

@@ -57,7 +57,9 @@ async function generate(rootPath) {
 
         let currentPath = path.join(PATH_CONTENT, className)
         if (await existsAsync(currentPath) !== 'dir') continue
-
+        if (className === 'static'){
+            console.error('[WARNING] classname static is reserved, skip...')
+        }
         // scan every Markdown file in current folder
         let fileNames = await listAsync(currentPath)
         for (let fileName of fileNames) {
@@ -105,8 +107,12 @@ async function generate(rootPath) {
             `.replace(/[ \t]+/g, ' ')
 
             let outputPath = path.join(PATH_OUTPUT, className, outputFileName)
-            // TODO: validate essay.pug exist
-            let out = pug.renderFile(path.join(PATH_TEMPLATE, 'essay.pug'), {
+
+            let essayTemplate = path.join(PATH_TEMPLATE, 'essay.pug')
+            if(await existsAsync(essayTemplate) !== 'file'){
+                throw new Error(`${essayTemplate} not exist`)
+            }
+            let out = pug.renderFile(essayTemplate, {
                 index,
                 body: header + body
             })
@@ -125,8 +131,13 @@ async function generate(rootPath) {
         if (classes[essay.className]) classes[essay.className]++
         else classes[essay.className] = 1
     }
-    // TODO: validate index.pug exist
-    let out = pug.renderFile(path.join(PATH_TEMPLATE, 'index.pug'), {
+
+    let indexTemplate = path.join(PATH_TEMPLATE, 'index.pug')
+    if(await existsAsync(indexTemplate) !== 'file'){
+        throw new Error(`${indexTemplate} not exist`)
+    }
+    
+    let out = pug.renderFile(indexTemplates, {
         classes,
         essayDescriptions
     })

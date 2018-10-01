@@ -1,7 +1,10 @@
 {
   "name": "simple-static-page-generator",
   "version": "0.1.0",
-  "description": "",
+  "description": "A static page generator, translate .md file to html file. compatible with github page. ",
+  "keywords":["static page generator", "html", "github pages"],
+  "homepage": "https://github.com/fry95116/simple-static-page-generator#readme",
+  "repository": "https://github.com/fry95116/simple-static-page-generator",
   "main": "./bin/sspg.js",
   "bin": {
     "sspg": "./bin/sspg.js"
@@ -24,6 +27,6 @@
     "vue-router": "^3.0.1",
     "yaml": "^1.0.0"
   },
-  "author": "",
+  "author": "tastycarb",
   "license": "MIT"
 }
