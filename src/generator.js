@@ -10,8 +10,10 @@ const {
     existsAsync,
     listAsync,
     inspectAsync,
-    copyAsync
+    copyAsync,
+    removeAsync
 } = require('fs-jetpack')
+const {mkdirAsync} = require('./utils')
 
 async function generate(rootPath) {
 
@@ -46,11 +48,13 @@ async function generate(rootPath) {
     // validate exist of path
     if (await existsAsync(PATH_CONTENT) !== 'dir')
         throw new Error(`path: ${PATH_CONTENT} not exist`)
-    if (await existsAsync(PATH_OUTPUT) !== 'dir')
-        throw new Error(`path: ${PATH_OUTPUT} not exist`)
     if (await existsAsync(PATH_TEMPLATE) !== 'dir')
         throw new Error(`path: ${PATH_TEMPLATE} not exist`)
 
+    //clear PATH_OUTPUT
+    await removeAsync(PATH_OUTPUT)
+    await mkdirAsync(PATH_OUTPUT)
+    
     // scan every folder in PATH_CONTENT
     let dirs = await listAsync(PATH_CONTENT)
     for (let className of dirs) {
