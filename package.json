@@ -2,9 +2,9 @@
   "name": "simple-static-page-generator",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "./bin/sspg.js",
   "bin": {
-    "sspg": "index.js"
+    "sspg": "./bin/sspg.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "commander": "^2.18.0",
+    "fs-jetpack": "^2.1.1",
     "lodash.isnil": "^4.0.0",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
