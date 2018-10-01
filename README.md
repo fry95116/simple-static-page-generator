@@ -2,6 +2,8 @@
 
 It's a static page generator, use to translate .md file to html file. compatible with github pages.
 
+inspired by [simiki](http://simiki.org/)
+
 ## install
 
 ```bash
