@@ -100,7 +100,7 @@ async function main(env){
 async function initializeFolder(rootPath){
 
     await mkdirAsync(path.join(rootPath, './content'))
-    await mkdirAsync(path.join(rootPath, './docs'))
+    // await mkdirAsync(path.join(rootPath, './docs'))
 
     await copyAsync(
         path.join(__dirname, '../defaultTemplate'),
