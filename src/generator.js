@@ -141,7 +141,7 @@ async function generate(rootPath) {
         throw new Error(`${indexTemplate} not exist`)
     }
     
-    let out = pug.renderFile(indexTemplates, {
+    let out = pug.renderFile(indexTemplate, {
         classes,
         essayDescriptions
     })
