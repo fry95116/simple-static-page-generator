@@ -3,17 +3,17 @@ html,body{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-    width: 100%;
-    height: 100%;
 }
 
 #the-essay{
-    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .my-navbar{
+    position: fixed;
+    width: 100%;
+    top:0px;
     height: 52px;
     flex: none;
     display: flex;
@@ -42,12 +42,10 @@ html,body{
 .content{
     width: 100%;
     flex: 1;
-    overflow-y: hidden;
 }
 
 .content.container .row{
     height: 100%;
-    overflow-y: hidden;
 }
 
 .content.content .row>div{
@@ -99,8 +97,6 @@ html,body{
         border-right: 0;
     }
 }
-
-
 
 a.unset,
 a.unset:link,
