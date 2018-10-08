@@ -2,7 +2,11 @@
   "name": "simple-static-page-generator",
   "version": "0.1.4",
   "description": "A static page generator, translate .md file to html file. compatible with github page. ",
-  "keywords":["static page generator", "html", "github pages"],
+  "keywords": [
+    "static page generator",
+    "html",
+    "github pages"
+  ],
   "homepage": "https://github.com/fry95116/simple-static-page-generator#readme",
   "repository": "https://github.com/fry95116/simple-static-page-generator",
   "main": "./bin/sspg.js",
@@ -10,18 +14,21 @@
     "sspg": "./bin/sspg.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "commander": "^2.18.0",
+    "finalhandler": "^1.1.1",
     "fs-jetpack": "^2.1.1",
     "lodash.isnil": "^4.0.0",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
     "markdown-it-front-matter": "^0.1.2",
     "moment": "^2.22.2",
+    "open": "0.0.5",
     "pug": "^2.0.3",
+    "serve-static": "^1.13.2",
     "uslug": "^1.0.4",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",

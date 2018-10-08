@@ -1,0 +1,117 @@
+html,body{
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    width: 100%;
+    height: 100%;
+}
+.my-navbar{
+    height: 52px;
+    flex: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.my-navbar .title{
+    color: #fff;
+    margin: 0;
+    font-size: 1.2rem;
+}
+.my-navbar .button-nav{
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    color: white;
+}
+  
+.my-navbar .button-nav.active{
+    background-color: white;
+    color: #343a40;
+}
+
+.content{
+    width:100%;
+    flex: auto;
+}
+  
+.content.loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.content.loading h5{
+    color: #aaa;
+}
+
+.content .side-bar .list-group{
+    /* position: sticky; */
+    /* margin-top: 60px; */
+}
+
+.content .side-bar .list-group-item.active span.badge.badge-primary.badge-pill{
+    color: #007bff;
+    background-color: #fff;
+}
+  
+@media (max-width: 575.98px) {
+    .content .side-bar{
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 0;
+        width: 70%;
+        height: 100%;
+        z-index: 1;
+        background-color: #fafafa;
+        box-shadow: 0px 0px 5px #ddd;
+    }
+
+    .content .side-bar .list-group{
+        position: relative;
+        top: 52px;
+    }
+    .content .side-bar .list-group-item{
+        border-left: 0;
+        border-radius: 0;
+        border-right: 0;
+    }
+
+}
+
+#the-index{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+}
+
+a.unset,
+a.unset:link,
+a.unset:visited,
+a.unset:hover,
+a.unset:focus,
+a.unset:active{
+    color: inherit;
+    text-decoration: none;
+}
+
+#the-index .content .card p{
+    position: relative;
+    line-height: 1.5;
+    min-height: 1em;
+    max-height: 3em;
+    overflow: hidden;
+}
+
+#the-index .content .card p::after {
+    content:"...";
+    font-weight:bold;
+    position:absolute;
+    bottom:0;
+    right:0;
+    padding-right: 10px;
+    background-color: #fff;
+    box-shadow: -0.5em 0.5em 10px 0.5em #FFF
+}

@@ -153,4 +153,3 @@ async function createEssay(rootPath, title, className, overwrite){
 
     await writeAsync(filePath, frontMatter)
 }
-
