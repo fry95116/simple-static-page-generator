@@ -1,6 +1,6 @@
 {
   "name": "simple-static-page-generator",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A static page generator, translate .md file to html file. compatible with github page. ",
   "keywords": [
     "static page generator",
