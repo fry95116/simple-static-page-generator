@@ -59,4 +59,11 @@ $(document).ready(function(){
         $sideBar.hide()
     }
 
+    window.onhashchange = function(){
+        window.scrollBy(0, -60)
+    }
+
+    if(window.location.hash !== ''){
+        window.scrollBy(0, -60)
+    }
 })
